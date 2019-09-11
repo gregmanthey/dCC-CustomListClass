@@ -1,0 +1,17 @@
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\CustomListClassUnitTests.dll
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\CustomListClassUnitTests.pdb
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\CustomListClassProject.exe
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\CustomListClassProject.pdb
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\CustomListClassProject.exe.config
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\obj\Debug\CustomListClassUnitTesting.csprojAssemblyReference.cache
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\obj\Debug\CustomListClassUnitTesting.csproj.CoreCompileInputs.cache
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\obj\Debug\CustomListClassUnitTesting.csproj.CopyComplete
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\obj\Debug\CustomListClassUnitTests.dll
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassUnitTests\obj\Debug\CustomListClassUnitTests.pdb
