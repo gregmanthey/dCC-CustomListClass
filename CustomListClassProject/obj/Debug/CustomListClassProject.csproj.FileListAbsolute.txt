@@ -1,7 +1,7 @@
 E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassProject\bin\Debug\CustomListClassProject.exe.config
 E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassProject\bin\Debug\CustomListClassProject.exe
 E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassProject\bin\Debug\CustomListClassProject.pdb
-E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassProject\obj\Debug\CustomListClassProject.csprojAssemblyReference.cache
 E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassProject\obj\Debug\CustomListClassProject.csproj.CoreCompileInputs.cache
 E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassProject\obj\Debug\CustomListClassProject.exe
 E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassProject\obj\Debug\CustomListClassProject.pdb
+E:\OneDrive\Desktop\devCodeCamp\Week_05\Projects\CustomListClass\dCC-CustomListClass\CustomListClassProject\obj\Debug\CustomListClassProject.csprojAssemblyReference.cache
