@@ -257,22 +257,6 @@ namespace CustomListClassUnitTests
     }
 
 
-    //[TestMethod]
-    //[ExpectedException(typeof(IndexOutOfRangeException))]
-    //public void Remove_RemoveASingleItemFromListWithLengthOfOneAndTryAccessingIndexZero_ThrowIndexOutOfRangeException()
-    //{
-    //  //arrange
-    //  CustomList<int> testList = new CustomList<int>();
-    //  int index = 0;
-    //  int number;
-
-    //  //act
-    //  testList.Add(42);
-    //  testList.Remove(42);
-    //  number = testList[index];
-    //}
-
-
     [TestMethod]
     public void Remove_RemoveASingleItemFromFrontOfListWithLengthOfFive_IndexOneBecomesIndexZero()
     {
@@ -359,6 +343,9 @@ namespace CustomListClassUnitTests
       testList.Add(3);
       testList.Remove(42);
       testList.Remove(3);
+      testList.Remove(42);
+      testList.Remove(3);
+      testList.Remove(3);
       actual = testList.Count;
 
       //assert
@@ -381,6 +368,9 @@ namespace CustomListClassUnitTests
       testList.Add(42);
       testList.Add(3);
       testList.Remove(42);
+      testList.Remove(3);
+      testList.Remove(42);
+      testList.Remove(3);
       testList.Remove(3);
       testList.Add(25);
       testList.Add(81);
@@ -438,26 +428,54 @@ namespace CustomListClassUnitTests
     }
 
 
-    //[TestMethod]
-    //[ExpectedException(typeof(IndexOutOfRangeException))]
-    //public void Remove_RemoveASingleItemFromFrontOfListWithLengthOfFive_IndexFourThrowsIndexOutOfRangeException()
-    //{
-    //  //arrange
-    //  CustomList<int> testList = new CustomList<int>();
-    //  int number;
-    //  int index = 4;
+    [TestMethod]
+    [ExpectedException(typeof(IndexOutOfRangeException))]
+    public void Indexer_RemoveASingleItemFromFrontOfListWithLengthOfFive_IndexFourThrowsIndexOutOfRangeException()
+    {
+      //arrange
+      CustomList<int> testList = new CustomList<int>();
+      int number;
+      int index = 4;
 
-    //  //act
-    //  testList.Add(42);
-    //  testList.Add(2);
-    //  testList.Add(3);
-    //  testList.Add(4);
-    //  testList.Add(5);
-    //  testList.Remove(42);
-    //  number = testList[index];
-    //}
+      //act
+      testList.Add(42);
+      testList.Add(2);
+      testList.Add(3);
+      testList.Add(4);
+      testList.Add(5);
+      testList.Remove(42);
+      number = testList[index];
+    }
 
 
+    [TestMethod]
+    [ExpectedException(typeof(IndexOutOfRangeException))]
+    public void Indexer_RemoveASingleItemFromListWithLengthOfOneAndTryAccessingIndexZero_ThrowIndexOutOfRangeException()
+    {
+      //arrange
+      CustomList<int> testList = new CustomList<int>();
+      int index = 0;
+      int number;
 
+      //act
+      testList.Add(42);
+      testList.Remove(42);
+      number = testList[index];
+    }
+
+
+    [TestMethod]
+    [ExpectedException(typeof(IndexOutOfRangeException))]
+    public void Indexer_TryAccessingNegativeIndex_ThrowIndexOutOfRangeException()
+    {
+      //arrange
+      CustomList<int> testList = new CustomList<int>();
+      int index = -1;
+      int number;
+
+      //act
+      testList.Add(42);
+      number = testList[index];
+    }
   }
 }

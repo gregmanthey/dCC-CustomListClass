@@ -13,7 +13,31 @@ namespace CustomListClassProject
     private int capacity;
     public int Count { get => count; }
     public int Capacity { get => capacity; }
-    public T this[int i] { get => items[i]; set => items[i] = value; }
+    public T this[int i]
+    {
+      get
+      {
+        if (i < 0 || i >= count)
+        {
+          throw new IndexOutOfRangeException();
+        }
+        else
+        {
+          return items[i];
+        }
+      }
+      set
+      {
+        if (i < 0 || i >= count)
+        {
+          throw new IndexOutOfRangeException();
+        }
+        else
+        {
+          items[i] = value;
+        }
+      }
+    }
 
     public CustomList()
     {
@@ -28,16 +52,30 @@ namespace CustomListClassProject
       {
         DoubleCapacity();
         T[] temporaryArray = new T[capacity];
-        CopyArrayOneToArrayTwo(items, temporaryArray);
-        items = new T[capacity];
-        CopyArrayOneToArrayTwo(temporaryArray, items);
-      }
+        CopyFromItemsArrayToTemporaryArray(temporaryArray);
+        PointReferenceOfItemsArrayToNewLocation(temporaryArray);
+        }
 
       items[count] = item;
       count++;
     }
 
     public void Remove(T item)
+    {
+      for (int i = 0; i < count; i++)
+      {
+        if (items[i].Equals(item))
+        {
+          for (int j = i + 1; j < count; j++)
+          {
+            items[j - 1] = items[j];
+          }
+          count--;
+        }
+      }
+    }
+
+    public void RemoveAll(T item)
     {
       CustomList<T> temporaryList = new CustomList<T>();
       for (int i = 0; i < count; i++)
@@ -74,15 +112,15 @@ namespace CustomListClassProject
       capacity *= 2;
     }
 
-    private void CopyArrayOneToArrayTwo(T[] arrayOne, T[] arrayTwo)
+    private void CopyFromItemsArrayToTemporaryArray(T[] temporaryArray)
     {
       for (int i = 0; i < count; i++)
       {
-        arrayTwo[i] = arrayOne[i];
+        temporaryArray[i] = items[i];
       }
     }
 
-    private void PointReferenceFromOldArrayToNewOne(T[] temporaryArray)
+    private void PointReferenceOfItemsArrayToNewLocation(T[] temporaryArray)
     {
       items = temporaryArray;
     }
