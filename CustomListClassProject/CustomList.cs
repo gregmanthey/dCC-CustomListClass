@@ -157,7 +157,7 @@ namespace CustomListClassProject
     {
       for (int i = 0; i < listToAdd.Count; i++)
       {
-        this.Add(listToAdd[i]);
+        Add(listToAdd[i]);
       }
     }
     public static CustomList<T> operator - (CustomList<T> customListOne, CustomList<T> customListTwo)
@@ -171,7 +171,43 @@ namespace CustomListClassProject
     {
       for (int i = 0; i < listToRemove.Count; i++)
       {
-        this.Remove(listToRemove[i]);
+        Remove(listToRemove[i]);
+      }
+    }
+    public void ZipperMerge(CustomList<T> listToMerge)
+    {
+      CustomList<T> resultingList = new CustomList<T>();
+      int timesToLoop;
+      if (Count < listToMerge.Count)
+      {
+        timesToLoop = listToMerge.Count;
+      }
+      else
+      {
+        timesToLoop = Count;
+      }
+      for (int i = 0; i < timesToLoop; i++)
+      {
+        if (i < Count)
+        {
+          resultingList.Add(items[i]);
+        }
+        if (i < listToMerge.Count)
+        {
+          resultingList.Add(listToMerge[i]);
+        }
+      }
+      Clear();
+      for (int i = 0; i < resultingList.Count; i++)
+      {
+        Add(resultingList[i]);
+      }
+    }
+    public void Clear()
+    {
+      for (int i = Count - 1; i >= 0; i--)
+      {
+        RemoveAt(i);
       }
     }
   }

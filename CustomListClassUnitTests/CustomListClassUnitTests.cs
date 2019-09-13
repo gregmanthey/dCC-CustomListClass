@@ -727,5 +727,131 @@ namespace CustomListClassUnitTests
       //assert
       Assert.AreEqual(expected, actual);
     }
+
+
+    [TestMethod]
+
+    public void ZipperMerge_CombineTwoListsTogetherEachWithLengthOfThree_ToStringOfResultWillHaveTheSixExpectedItems()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      string expected = "1,2,3,4,5,6";
+      string actual;
+
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(2);
+      testListTwo.Add(4);
+      testListTwo.Add(6);
+
+      //act
+      testListOne.ZipperMerge(testListTwo);
+      actual = testListOne.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void ZipperMerge_CombineTwoListsOneWithLengthOfSixOneWithLengthOfThree_ToStringOfResultWillHaveTheNineExpectedItems()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      string expected = "1,2,3,4,5,6,1,3,5";
+      string actual;
+
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(2);
+      testListTwo.Add(4);
+      testListTwo.Add(6);
+
+      //act
+      testListOne.ZipperMerge(testListTwo);
+      actual = testListOne.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void ZipperMerge_CombineTwoListsTogetherOneWithLengthOfThreeOneWithLengthOfSeven_CountBecomesTen()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      int expected = 10;
+      int actual;
+
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(2);
+      testListTwo.Add(4);
+      testListTwo.Add(6);
+      testListTwo.Add(2);
+      testListTwo.Add(4);
+      testListTwo.Add(6);
+      testListTwo.Add(6);
+
+      //act
+      testListOne.ZipperMerge(testListTwo);
+      actual = testListOne.Count;
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void ZipperMerge_CombineTwoListsTogetherOneWithLengthOfNineOneWithLengthOfThree_CountBecomesTwelve()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      int expected = 12;
+      int actual;
+
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(2);
+      testListTwo.Add(4);
+      testListTwo.Add(6);
+
+
+      //act
+      testListOne.ZipperMerge(testListTwo);
+      actual = testListOne.Count;
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
   }
 }
