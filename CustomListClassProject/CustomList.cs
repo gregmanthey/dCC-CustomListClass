@@ -68,7 +68,6 @@ namespace CustomListClassProject
         {
           RemoveAt(i);
         }
-
       }
     }
 
@@ -147,7 +146,7 @@ namespace CustomListClassProject
       }
       return listString;
     }
-    public static CustomList<T> operator +(CustomList<T> customListOne, CustomList<T> customListTwo)
+    public static CustomList<T> operator + (CustomList<T> customListOne, CustomList<T> customListTwo)
     {
       CustomList<T> resultingList = new CustomList<T>();
       resultingList.AddListToCurrentList(customListOne);
@@ -159,6 +158,20 @@ namespace CustomListClassProject
       for (int i = 0; i < listToAdd.Count; i++)
       {
         this.Add(listToAdd[i]);
+      }
+    }
+    public static CustomList<T> operator - (CustomList<T> customListOne, CustomList<T> customListTwo)
+    {
+      CustomList<T> resultingList = new CustomList<T>();
+      resultingList.AddListToCurrentList(customListOne);
+      resultingList.RemoveListFromCurrentList(customListTwo);
+      return resultingList;
+    }
+    private void RemoveListFromCurrentList(CustomList<T> listToRemove)
+    {
+      for (int i = 0; i < listToRemove.Count; i++)
+      {
+        this.Remove(listToRemove[i]);
       }
     }
   }

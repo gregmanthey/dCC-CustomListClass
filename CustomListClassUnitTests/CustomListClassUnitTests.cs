@@ -525,20 +525,14 @@ namespace CustomListClassUnitTests
 
     [TestMethod]
 
-    public void PlusSign_AddTwoListsWithThreeElementsTogether_ItemFourIn()
+    public void PlusSign_AddTwoListsWithThreeElementsTogether_ToStringOfResultHasBothListContents()
     {
       //arrange
       CustomList<int> testListOne = new CustomList<int>();
       CustomList<int> testListTwo = new CustomList<int>();
 
-      CustomList<int> actual = new CustomList<int>();
-      CustomList<int> expected = new CustomList<int>();
-      expected.Add(1);
-      expected.Add(3);
-      expected.Add(5);
-      expected.Add(2);
-      expected.Add(4);
-      expected.Add(6);
+      string actual;
+      string expected = "1,3,5,2,4,6";
 
       //act
       testListOne.Add(1);
@@ -549,10 +543,39 @@ namespace CustomListClassUnitTests
       testListTwo.Add(4);
       testListTwo.Add(6);
 
-      actual = testListOne + testListTwo;
+      testListOne += testListTwo;
+      actual = testListOne.ToString();
 
       //assert
-      Assert.AreEqual(expected.ToString(), actual.ToString());
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void PlusSign_AddTwoListsWithThreeElementsTogether_CountBecomesSix()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      int actual;
+      int expected = 6;
+
+      //act
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(2);
+      testListTwo.Add(4);
+      testListTwo.Add(6);
+
+      testListOne += testListTwo;
+      actual = testListOne.Count;
+
+      //assert
+      Assert.AreEqual(expected, actual);
     }
 
 
@@ -594,6 +617,112 @@ namespace CustomListClassUnitTests
       //act
       testListOne += testListTwo;
       actual = testListOne.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void MinusSign_SubtractTwoEmptyLists_ResultingStringIsEmpty()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      string expected = "";
+      string actual;
+
+      //act
+      testListOne += testListTwo;
+      actual = testListOne.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void MinusSign_SubtractOneListFromAnotherWithOneCommonItem_ResultingStringHasOneValueRemoved()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      string expected = "3,5";
+      string actual;
+
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(2);
+      testListTwo.Add(1);
+      testListTwo.Add(6);
+
+      //act
+      testListOne -= testListTwo;
+      actual = testListOne.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+
+    [TestMethod]
+
+    public void MinusSign_SubtractOneListFromAnotherWithAllCommonItemsButInDifferentOrder_ResultingToStringIsEmpty()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      string expected = "";
+      string actual;
+
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(5);
+      testListTwo.Add(1);
+      testListTwo.Add(3);
+
+      //act
+      testListOne -= testListTwo;
+      actual = testListOne.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+
+    [TestMethod]
+
+    public void MinusSign_SubtractOneListFromAnotherWithAllCommonItemsButInDifferentOrder_CountBecomesZero()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      int expected = 0;
+      int actual;
+      
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(5);
+      testListTwo.Add(1);
+      testListTwo.Add(3);
+
+      //act
+      testListOne -= testListTwo;
+      actual = testListOne.Count;
 
       //assert
       Assert.AreEqual(expected, actual);
