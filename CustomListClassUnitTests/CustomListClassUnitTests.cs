@@ -521,5 +521,82 @@ namespace CustomListClassUnitTests
       //assert
       Assert.AreEqual(expected, actual);
     }
+
+
+    [TestMethod]
+
+    public void PlusSign_AddTwoListsWithThreeElementsTogether_ItemFourIn()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      CustomList<int> actual = new CustomList<int>();
+      CustomList<int> expected = new CustomList<int>();
+      expected.Add(1);
+      expected.Add(3);
+      expected.Add(5);
+      expected.Add(2);
+      expected.Add(4);
+      expected.Add(6);
+
+      //act
+      testListOne.Add(1);
+      testListOne.Add(3);
+      testListOne.Add(5);
+
+      testListTwo.Add(2);
+      testListTwo.Add(4);
+      testListTwo.Add(6);
+
+      actual = testListOne + testListTwo;
+
+      //assert
+      Assert.AreEqual(expected.ToString(), actual.ToString());
+    }
+
+
+    [TestMethod]
+
+    public void PlusSign_AddTwoListsTogetherOneHasThreeItemsOneIsEmpty_ResultingStringHasNothingFromEmptyListAndThreeItemsFromOtherList()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      string expected = "2,4,6";
+      string actual;
+
+      testListTwo.Add(2);
+      testListTwo.Add(4);
+      testListTwo.Add(6);
+
+      //act
+      testListOne += testListTwo;
+      actual = testListOne.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void PlusSign_AddTwoEmptyListsTogether_ResultingStringIsEmpty()
+    {
+      //arrange
+      CustomList<int> testListOne = new CustomList<int>();
+      CustomList<int> testListTwo = new CustomList<int>();
+
+      string expected = "";
+      string actual;
+
+      //act
+      testListOne += testListTwo;
+      actual = testListOne.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
   }
 }

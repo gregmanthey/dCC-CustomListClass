@@ -138,7 +138,7 @@ namespace CustomListClassProject
       {
         if (i + 1 == count)
         {
-          listString += $"{items[i]})";
+          listString += $"{items[i]}";
         }
         else
         {
@@ -146,6 +146,20 @@ namespace CustomListClassProject
         }
       }
       return listString;
+    }
+    public static CustomList<T> operator +(CustomList<T> customListOne, CustomList<T> customListTwo)
+    {
+      CustomList<T> resultingList = new CustomList<T>();
+      resultingList.AddListToCurrentList(customListOne);
+      resultingList.AddListToCurrentList(customListTwo);
+      return resultingList;
+    }
+    private void AddListToCurrentList(CustomList<T> listToAdd)
+    {
+      for (int i = 0; i < listToAdd.Count; i++)
+      {
+        this.Add(listToAdd[i]);
+      }
     }
   }
 }
