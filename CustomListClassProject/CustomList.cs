@@ -66,12 +66,18 @@ namespace CustomListClassProject
       {
         if (items[i].Equals(item))
         {
-          for (int j = i + 1; j < count; j++)
-          {
-            items[j - 1] = items[j];
-          }
-          count--;
+          RemoveAt(i);
         }
+
+      }
+    }
+
+    public void RemoveAt(int index)
+    {
+      count--;
+      for (int i = index; i < count; i++)
+      {
+        items[i] = items[i + 1];
       }
     }
 
@@ -123,6 +129,23 @@ namespace CustomListClassProject
     private void PointReferenceOfItemsArrayToNewLocation(T[] temporaryArray)
     {
       items = temporaryArray;
+    }
+   
+    public override string ToString()
+    {
+      string listString = "";
+      for (int i = 0; i < count; i++)
+      {
+        if (i + 1 == count)
+        {
+          listString += $"{items[i]})";
+        }
+        else
+        {
+          listString += $"{items[i]},";
+        }
+      }
+      return listString;
     }
   }
 }

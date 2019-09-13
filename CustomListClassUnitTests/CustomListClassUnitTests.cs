@@ -477,5 +477,49 @@ namespace CustomListClassUnitTests
       testList.Add(42);
       number = testList[index];
     }
+
+
+    [TestMethod]
+    public void ToString_ConvertListToString_ReturnedStringHasCommaSeparatedValuesEnclosedInParenthesis()
+    {
+      //arrange
+      CustomList<int> testList = new CustomList<int>();
+      string expected = "42,2,3,5";
+      string actual;
+
+      //act
+      testList.Add(42);
+      testList.Add(2);
+      testList.Add(3);
+      testList.Add(5);
+      actual = testList.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void ToString_ConvertStringListWithNullItemsToString_ReturnedStringHasCommaSeparatedValuesEnclosedInParenthesis()
+    {
+      //arrange
+      CustomList<string> testList = new CustomList<string>();
+      string expected = ",Cacophony,,,Test,thing,word";
+      string actual;
+
+      //act
+      testList.Add(null);
+      testList.Add("Cacophony");
+      testList.Add(null);
+      testList.Add(null);
+      testList.Add("Test");
+      testList.Add("thing");
+      testList.Add("word");
+      actual = testList.ToString();
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
   }
 }
