@@ -853,5 +853,72 @@ namespace CustomListClassUnitTests
       //assert
       Assert.AreEqual(expected, actual);
     }
+
+
+    [TestMethod]
+
+    public void GetEnumerator_UseForeachLoopToDisplayContentsOfListAsSingleStringAndIntersperseCommas_WillResultInCommaSeparatedValuesOfList()
+    {
+      //arrange
+      CustomList<int> testList = new CustomList<int>();
+
+      string expected = "1,3,5,1,3,5,1,3,5";
+      string actual = "";
+
+      testList.Add(1);
+      testList.Add(3);
+      testList.Add(5);
+      testList.Add(1);
+      testList.Add(3);
+      testList.Add(5);
+      testList.Add(1);
+      testList.Add(3);
+      testList.Add(5);
+
+
+      //act
+      bool shouldPlaceComma = false;
+      foreach (int number in testList)
+      {
+        if (shouldPlaceComma)
+        {
+          actual += ",";
+        }
+        actual += $"{number}";
+        shouldPlaceComma = true;
+      }
+      
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+
+    public void GetEnumerator_UseForeachLoopToDisplayContentsOfBlankListAsSingleStringAndIntersperseCommas_WillResultInBlankString()
+    {
+      //arrange
+      CustomList<int> testList = new CustomList<int>();
+
+      string expected = "";
+      string actual = "";
+
+
+      //act
+      bool shouldPlaceComma = false;
+      foreach (int number in testList)
+      {
+        if (shouldPlaceComma)
+        {
+          actual += ",";
+        }
+        actual += $"{number}";
+        shouldPlaceComma = true;
+      }
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
   }
 }

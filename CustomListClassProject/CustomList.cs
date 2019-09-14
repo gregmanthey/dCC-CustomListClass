@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
-  public class CustomList<T>
+  public class CustomList<T> : IEnumerable<T>
   {
     private T[] items;
     private int count;
@@ -209,6 +210,19 @@ namespace CustomListClassProject
       {
         RemoveAt(i);
       }
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+      for (int i = 0; i < Count; i++)
+      {
+        yield return items[i];
+      }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      return GetEnumerator();
     }
   }
 }
