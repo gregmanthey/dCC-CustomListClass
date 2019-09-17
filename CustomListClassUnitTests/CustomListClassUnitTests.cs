@@ -920,5 +920,41 @@ namespace CustomListClassUnitTests
       //assert
       Assert.AreEqual(expected, actual);
     }
+
+
+    [TestMethod]
+
+    public void GetEnumerator_UseForeachLoopToDisplayContentsOfListAsSingleStringAndIntersperseCommas_WillResultInCommaSeparatedValuesOfListOfStrings()
+    {
+      //arrange
+      CustomList<string> testList = new CustomList<string>();
+
+      string expected = "Pete is a cow. Pete is a cow. Pete is a cow. ";
+      string actual = "";
+
+      testList.Add("Pete ");
+      testList.Add("is ");
+      testList.Add("a ");
+      testList.Add("cow. ");
+      testList.Add("Pete ");
+      testList.Add("is ");
+      testList.Add("a ");
+      testList.Add("cow. ");
+      testList.Add("Pete ");
+      testList.Add("is ");
+      testList.Add("a ");
+      testList.Add("cow. ");
+
+
+      //act
+      foreach (string word in testList)
+      {
+        actual += $"{word}";
+      }
+
+
+      //assert
+      Assert.AreEqual(expected, actual);
+    }
   }
 }

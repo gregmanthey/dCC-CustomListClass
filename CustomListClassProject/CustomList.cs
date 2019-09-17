@@ -18,9 +18,9 @@ namespace CustomListClassProject
     {
       get
       {
-        if (i < 0 || i >= count)
+        if (i < 0 || i >= Count)
         {
-          throw new IndexOutOfRangeException();
+          throw new IndexOutOfRangeException("Error: You are attempting to access an index outside of the bounds of the CustomList.");
         }
         else
         {
@@ -29,9 +29,9 @@ namespace CustomListClassProject
       }
       set
       {
-        if (i < 0 || i >= count)
+        if (i < 0 || i >= Count)
         {
-          throw new IndexOutOfRangeException();
+          throw new IndexOutOfRangeException("Error: You are attempting to access an index outside of the bounds of the CustomList.");
         }
         else
         {
@@ -57,25 +57,27 @@ namespace CustomListClassProject
         PointReferenceOfItemsArrayToNewLocation(temporaryArray);
         }
 
-      items[count] = item;
+      items[Count] = item;
       count++;
     }
 
-    public void Remove(T item)
+    public bool Remove(T item)
     {
-      for (int i = 0; i < count; i++)
+      for (int i = 0; i < Count; i++)
       {
         if (items[i].Equals(item))
         {
           RemoveAt(i);
+          return true;
         }
       }
+      return false;
     }
 
     public void RemoveAt(int index)
     {
       count--;
-      for (int i = index; i < count; i++)
+      for (int i = index; i < Count; i++)
       {
         items[i] = items[i + 1];
       }
@@ -84,7 +86,7 @@ namespace CustomListClassProject
     public void RemoveAll(T item)
     {
       CustomList<T> temporaryList = new CustomList<T>();
-      for (int i = 0; i < count; i++)
+      for (int i = 0; i < Count; i++)
       {
         if (items[i].Equals(item))
         {
@@ -106,7 +108,7 @@ namespace CustomListClassProject
 
     private bool ListIsAtCapacity()
     {
-      if (count == capacity)
+      if (Count == capacity)
       {
         return true;
       }
@@ -120,7 +122,7 @@ namespace CustomListClassProject
 
     private void CopyFromItemsArrayToTemporaryArray(T[] temporaryArray)
     {
-      for (int i = 0; i < count; i++)
+      for (int i = 0; i < Count; i++)
       {
         temporaryArray[i] = items[i];
       }
@@ -134,9 +136,9 @@ namespace CustomListClassProject
     public override string ToString()
     {
       string listString = "";
-      for (int i = 0; i < count; i++)
+      for (int i = 0; i < Count; i++)
       {
-        if (i + 1 == count)
+        if (i + 1 == Count)
         {
           listString += $"{items[i]}";
         }
@@ -206,9 +208,9 @@ namespace CustomListClassProject
     }
     public void Clear()
     {
-      for (int i = Count - 1; i >= 0; i--)
+      for (int highestIndex = Count - 1; highestIndex >= 0; highestIndex--)
       {
-        RemoveAt(i);
+        RemoveAt(highestIndex);
       }
     }
 

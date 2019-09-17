@@ -1,0 +1,30 @@
+CustomList<T> - operator overload
+
+Returns a CustomList<T> with the first occurrence of a specific object removed from the CustomList<T> given a set of 0 or more objects.
+
+C#:
+public static CustomList<T> operator - (CustomList<T> customListOne, CustomList<T> customListTwo);
+
+Parameters:
+customListOne -- CustomList<T>
+customListTwo -- CustomLIst<T>
+
+Returns:
+CustomList<T>
+
+Implements:
+CustomList<T>.Remove(T)
+
+C# Syntax Example:
+--------------------------------------------------------------------------------------
+CustomList<int> numbers = new CustomList<int>() { 1, 3, 5, 7, 1, 8, 9, 1 };
+CustomList<int> numbersToRemove = new CustomList<int>() { 1, 2, 1, 4, 6, 7, 7 };
+CustomList<int> result = new CustomList<int>();
+
+result = numbers - numbersToRemove;
+//resulting list will be { 3, 5, 8, 9, 1 }
+//values in numbers and numbersToRemove will be preserved
+
+numbers -= numbersToRemove;
+//numbers list will be updated with the new results { 3, 5, 8, 9, 1 }
+--------------------------------------------------------------------------------------
